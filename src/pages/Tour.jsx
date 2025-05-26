@@ -1,5 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Accordion, Box, Container, Typography } from "@mui/material";
 import QuiltedImageList from "../components/QuiltedImageList";
+import CustomizedAccordions from "../components/CustomizedAccordions";
 
 export default function Tour() {
   return (
@@ -15,6 +16,23 @@ export default function Tour() {
           width="auto"
         />
         <QuiltedImageList />
+      </Box>
+      <Box>
+        <Typography variant="h6" component="h2" marginTop={3}>
+          About this tour
+        </Typography>
+        <Typography variant="caption" component="p" marginTop={3}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+          suscipit, saepe totam quas enim neque reprehenderit commodi nemo cum,
+          ratione optio repellat aliquid laudantium ad? Consequuntur praesentium
+          aspernatur rerum nemo.
+        </Typography>
+      </Box>
+      <Box>
+        <Typography variant="h6" component="h2" marginTop={3} marginBottom={3}>
+          Frequently Asked Questions
+        </Typography>
+        <CustomizedAccordions />
       </Box>
     </Container>
   );
