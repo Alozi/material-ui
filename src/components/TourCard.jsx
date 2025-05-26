@@ -46,7 +46,7 @@ export default function TourCard({
     <ThemeProvider theme={theme}>
       <Grid item size={3}>
         <Paper elevation={3}>
-          <img className="img" src={img} alt="Greece image" />
+          <img className="img" src={img} alt={title} />
           <Box paddingX={1}>
             <Typography variant="subtitle1" component="h2">
               {title}
@@ -70,12 +70,12 @@ export default function TourCard({
                 {rating}
               </Typography>
               <Typography variant="body3" component="p" marginLeft={2}>
-                {reviews}
+                ({reviews}) reviews
               </Typography>
             </Box>
             <Box>
               <Typography variant="h6" component="h3">
-                {price}
+                From ${price}
               </Typography>
             </Box>
           </Box>
