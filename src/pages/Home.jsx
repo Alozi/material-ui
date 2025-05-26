@@ -14,7 +14,7 @@ export default function Home() {
         >
           Top Greece Tours
         </Typography>
-        <Grid container spacing={5}>
+        <Grid container spacing={{ xs: 1, md: 5 }}>
           <TourCard
             img="https://plus.unsplash.com/premium_photo-1661964149725-fbf14eabd38c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlZWNlfGVufDB8fDB8fHww"
             title="Oia, Greece"
@@ -58,7 +58,7 @@ export default function Home() {
             >
               Top {city.name} Tours
             </Typography>
-            <Grid container spacing={5}>
+            <Grid container spacing={{ xs: 1, md: 5 }}>
               {city.tours.map((tour) => {
                 return (
                   <TourCard
