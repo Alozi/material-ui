@@ -1,6 +1,15 @@
-import { Accordion, Box, Container, Typography } from "@mui/material";
+import {
+  Accordion,
+  Box,
+  Container,
+  Typography,
+  Paper,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
 import QuiltedImageList from "../components/QuiltedImageList";
 import CustomizedAccordions from "../components/CustomizedAccordions";
+import BasicModal from '../components/BasicModal';
 
 export default function Tour() {
   return (
@@ -34,6 +43,14 @@ export default function Tour() {
         </Typography>
         <CustomizedAccordions />
       </Box>
+      <Paper
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        elevation={3}
+      >
+        <BottomNavigation>
+          <BasicModal />
+        </BottomNavigation>
+      </Paper>
     </Container>
   );
 }
