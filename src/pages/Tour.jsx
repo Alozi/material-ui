@@ -19,6 +19,7 @@ export default function Tour() {
           xs: "auto",
           lg: 900,
         },
+        pb: 8,
       }}
     >
       <Typography variant="h3" component="h1" marginTop={3}>
