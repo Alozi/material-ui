@@ -1,11 +1,42 @@
-# Material UI
+# Material UI Practice Project
 
-This web project for practice with library Material UI and routing using react-router-dom. 
+A small React web project to practice using the **Material UI** component library and **React Router (react-router-dom)** for routing.
 
-![Screenshot with app](/frontend/public/screencapture.png)
+![App Screenshot](./public/screencapture.png)
 
-## Run this project:
+## 🚀 Features
 
-### `npm install`
+- ✅ Material UI layout and components
+- ✅ Responsive design
+- ✅ Routing with `react-router-dom`
+- ✅ Clean and minimal UI
 
-### `npm start`
+## 🛠️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Alozi/material-ui.git
+cd material-ui
+```
+
+### 2.Install dependencies and run project locally
+
+```bash
+npm install
+npm start
+```
+
+### Folder structure 
+
+```bash
+.
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   └── App.js
+├── package.json
+└── README.md
+```
