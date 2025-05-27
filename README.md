@@ -24,7 +24,7 @@ cd material-ui
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ### Folder structure 

@@ -4,14 +4,42 @@ import {
   Container,
   Typography,
   Paper,
+  Rating,
   BottomNavigation,
   BottomNavigationAction,
 } from "@mui/material";
+import { AccessTime } from "@mui/icons-material";
+import { useParams } from "react-router-dom";
+
 import QuiltedImageList from "../components/QuiltedImageList";
 import CustomizedAccordions from "../components/CustomizedAccordions";
 import BasicModal from "../components/BasicModal";
 
+import data from "../data.json";
+
 export default function Tour() {
+  const { id } = useParams();
+
+  const tours = data.flatMap((city) =>
+    city.tours.map((tour) => ({ ...tour, cityName: city.name }))
+  );
+
+  const tour = tours.find((t) => t.id == id);
+
+  if (!tour) {
+    return (
+      <Container sx={{ marginY: 5 }}>
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{ marginTop: 5, marginBottom: 3 }}
+        >
+          Tour doesn't find
+        </Typography>
+      </Container>
+    );
+  }
+
   return (
     <Container
       sx={{
@@ -23,7 +51,7 @@ export default function Tour() {
       }}
     >
       <Typography variant="h3" component="h1" marginTop={3}>
-        Explore the World in Vegas
+        {tour.name}
       </Typography>
       <Box
         marginTop={3}
@@ -31,7 +59,7 @@ export default function Tour() {
       >
         <Box
           component="img"
-          src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={tour.image}
           alt="Greece image"
           sx={{
             height: { xs: 200, md: 350 },
@@ -41,10 +69,40 @@ export default function Tour() {
         />
         <QuiltedImageList />
       </Box>
-
+      <Box
+       marginTop={3}
+        paddingX={1}
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "auto auto auto",
+          alignItems: "center",
+          gap: 2,
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+          <AccessTime sx={{ width: 12.5 }} />
+          <Typography variant="body2" component="p">
+            {tour.duration} hours
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+          <Rating value={tour.rating} readOnly precision={0.5} size="small" />
+          <Typography variant="body2" component="p">
+            {tour.rating}
+          </Typography>
+          <Typography variant="body3" component="p" ml={1}>
+            ({tour.numberOfReviews}) reviews
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h6" component="h3">
+            From ${tour.price}
+          </Typography>
+        </Box>
+      </Box>
       <Box>
         <Typography variant="h6" component="h2" marginTop={3}>
-          About this tour
+          Description
         </Typography>
         <Typography variant="caption" component="p" marginTop={3}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
