@@ -6,10 +6,10 @@ A small React web project to practice using the **Material UI** component librar
 
 ## 🚀 Features
 
-- ✅ Material UI layout and components
-- ✅ Responsive design
-- ✅ Routing with `react-router-dom`
-- ✅ Clean and minimal UI
+- Material UI layout and components
+- Responsive design
+- Routing with `react-router-dom`
+- Clean and minimal UI
 
 ## 🛠️ Getting Started
 
